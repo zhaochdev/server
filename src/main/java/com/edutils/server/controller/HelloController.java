@@ -2,6 +2,7 @@ package com.edutils.server.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,6 +17,7 @@ import java.net.UnknownHostException;
  * @date 2023-02-21
  */
 @RestController
+@CrossOrigin
 public class HelloController {
 
     private static final Logger logger = LoggerFactory.getLogger(HelloController.class);
@@ -54,6 +56,6 @@ public class HelloController {
 
         logger.info(ipAddress);
 
-        return "hello ".concat(ipAddress != null ? ipAddress : "");
+        return "Hello ".concat(ipAddress != null ? ipAddress : "");
     }
 }
